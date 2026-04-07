@@ -832,7 +832,7 @@ h3 { font-size: 1.35rem; }
 @media (max-width: 1024px) {
   .features__grid,
   .team__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr) !important;
   }
 
   .footer__grid {
@@ -901,7 +901,7 @@ h3 { font-size: 1.35rem; }
   /* Grids */
   .features__grid,
   .team__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr !important;
   }
 
   .stats__grid {
