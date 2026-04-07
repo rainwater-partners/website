@@ -79,11 +79,12 @@
     var companyName = form.querySelector('#companyName');
     var contactName = form.querySelector('#contactName');
     var email = form.querySelector('#email');
+    var phone = form.querySelector('#phone');
     var annualSpend = form.querySelector('#annualSpend');
 
     var valid = true;
 
-    [companyName, contactName, email, annualSpend].forEach(function (field) {
+    [companyName, contactName, email, phone, annualSpend].forEach(function (field) {
       field.style.borderColor = '';
       if (!field.value.trim()) {
         field.style.borderColor = '#e74c3c';

@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Sign up to learn more about joining Rainwater Co-op and start saving on your rainwater harvesting supplies.">
-  <title>Sign Up &mdash; Rainwater Co-op</title>
+  <meta name="description" content="Join the Rainwater Co-op waitlist. Launching September 2026 — reserve your spot and start saving an estimated 10-15% on supplies.">
+  <title>Join the Waitlist &mdash; Rainwater Co-op</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -30,7 +30,7 @@
           <li><a href="about.html">About</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li class="nav__cta"><a href="signup.html" class="btn btn--primary">Join the Co-op</a></li>
+          <li class="nav__cta"><a href="index.html#waitlist" class="btn btn--primary">Join the Waitlist</a></li>
         </ul>
         <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
           <span></span><span></span><span></span>
@@ -42,8 +42,8 @@
   <!-- Page Header -->
   <section class="page-header">
     <div class="container">
-      <h1>Join the Co-op</h1>
-      <p>Fill out the form below and we'll be in touch with details on membership and pricing.</p>
+      <h1>Join the Waitlist</h1>
+      <p>Launching September 2026. Reserve your spot and we'll send you a confirmation email.</p>
     </div>
   </section>
 
@@ -53,7 +53,7 @@
       <div class="form-section">
         <div class="form-section__intro">
           <h2>Tell us about your company</h2>
-          <p>We'll use this information to give you a personalized savings estimate and connect you with the right vendor partners.</p>
+          <p>We'll use this information to give you a personalized savings estimate and connect you with the right supplier partners ahead of launch.</p>
         </div>
 
         <form class="form" id="signupForm" novalidate>
@@ -73,6 +73,11 @@
           </div>
 
           <div class="form__group">
+            <label class="form__label" for="phone">Phone Number <span>*</span></label>
+            <input class="form__input" type="tel" id="phone" name="phone" placeholder="e.g. (512) 555-0100" required>
+          </div>
+
+          <div class="form__group">
             <label class="form__label" for="annualSpend">Approximate Annual Spend on Supplies <span>*</span></label>
             <select class="form__select" id="annualSpend" name="annualSpend" required>
               <option value="" disabled selected>Select a range</option>
@@ -83,7 +88,7 @@
               <option value="250k-500k">$250,000 &ndash; $500,000</option>
               <option value="500k-plus">$500,000+</option>
             </select>
-            <div class="form__hint">This helps us estimate your potential savings and match you with relevant vendor programs.</div>
+            <div class="form__hint">This helps us estimate your potential savings and match you with relevant supplier programs.</div>
           </div>
 
           <div class="form__group">
@@ -92,12 +97,7 @@
             <div class="form__hint">List any specific manufacturers, brands, or product categories you'd like us to negotiate pricing on.</div>
           </div>
 
-          <div class="form__group">
-            <label class="form__label" for="comments">Anything else you'd like us to know?</label>
-            <textarea class="form__textarea" id="comments" name="comments" placeholder="Optional: tell us about your business, your biggest supply cost challenges, etc." style="min-height:80px;"></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--accent">Submit &amp; Learn More</button>
+          <button type="submit" class="btn btn--accent">Join the Waitlist</button>
         </form>
 
         <!-- Success state -->
@@ -105,8 +105,8 @@
           <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
           </svg>
-          <h3>Thank you!</h3>
-          <p>We've received your information and will be in touch within 1&ndash;2 business days with details on membership and a personalized savings estimate.</p>
+          <h3>You're on the list!</h3>
+          <p>A confirmation email has been sent to your inbox. We'll keep you updated as we get closer to our September 2026 launch.</p>
         </div>
       </div>
     </div>
@@ -124,7 +124,7 @@
             </svg>
             Rainwater Co-op
           </a>
-          <p>A purchasing cooperative that helps independent rainwater collection and harvesting companies save on supplies through collective buying power.</p>
+          <p>A purchasing cooperative that helps independent rainwater collection and harvesting companies save on supplies through collective buying power. Launching September 2026.</p>
         </div>
         <div>
           <h4>Pages</h4>
@@ -138,7 +138,7 @@
         <div>
           <h4>Get Started</h4>
           <ul class="footer__links">
-            <li><a href="signup.html">Join the Co-op</a></li>
+            <li><a href="index.html#waitlist">Join the Waitlist</a></li>
             <li><a href="faq.html">How It Works</a></li>
             <li><a href="contact.html">Get in Touch</a></li>
           </ul>
