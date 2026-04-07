@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Get in touch with Rainwater Co-op. Reach us by mail, phone, or email.">
+  <title>Contact Us &mdash; Rainwater Co-op</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <a href="index.html" class="logo">
+        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M18 3C18 3 6 16 6 23a12 12 0 0 0 24 0C30 16 18 3 18 3z" fill="currentColor" opacity="0.15"/>
+          <path d="M18 3C18 3 6 16 6 23a12 12 0 0 0 24 0C30 16 18 3 18 3z" stroke="currentColor" stroke-width="2" fill="none"/>
+          <path d="M14 28a6 6 0 0 1-4-5.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        </svg>
+        Rainwater Co-op
+      </a>
+      <nav>
+        <div class="nav__overlay" id="navOverlay"></div>
+        <ul class="nav__links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="faq.html">FAQ</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li class="nav__cta"><a href="signup.html" class="btn btn--primary">Join the Co-op</a></li>
+        </ul>
+        <button class="nav__toggle" id="navToggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Page Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>Contact Us</h1>
+      <p>Have a question or want to learn more? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <!-- Contact Cards -->
+  <section class="section">
+    <div class="container">
+      <div class="text-center" style="margin-bottom:12px;">
+        <h2>Get in Touch</h2>
+        <p style="color:var(--color-text-light);max-width:500px;margin:12px auto 0;">Reach out through any of the channels below. We typically respond within one business day.</p>
+      </div>
+
+      <div class="contact__grid">
+
+        <!-- Mail -->
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 21h19.5m-18-18v18m10.5-18v18m6-13.5V21M6.75 6.75h.75m-.75 3h.75m-.75 3h.75m3-6h.75m-.75 3h.75m-.75 3h.75M6.75 21v-3.375c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21M3 3h12m-.75 4.5H21m-3.75 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Zm0 3h.008v.008h-.008v-.008Z"/></svg>
+          </div>
+          <div>
+            <h3>Mailing Address</h3>
+            <p>
+              Rainwater Co-op<br>
+              P.O. Box 4817<br>
+              Austin, TX 78765
+            </p>
+          </div>
+        </div>
+
+        <!-- Phone -->
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 0 0 2.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 0 1-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 0 0-1.091-.852H4.5A2.25 2.25 0 0 0 2.25 4.5v2.25Z"/></svg>
+          </div>
+          <div>
+            <h3>Phone</h3>
+            <p>
+              <a href="tel:+15127349283">(512) 734-9283</a><br>
+              Monday &ndash; Friday, 8am &ndash; 5pm CT
+            </p>
+          </div>
+        </div>
+
+        <!-- Email -->
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75"/></svg>
+          </div>
+          <div>
+            <h3>Email</h3>
+            <p>
+              General inquiries:<br>
+              <a href="mailto:info@rainwatercoop.com">info@rainwatercoop.com</a>
+            </p>
+            <p style="margin-top:8px;">
+              Member support:<br>
+              <a href="mailto:members@rainwatercoop.com">members@rainwatercoop.com</a>
+            </p>
+          </div>
+        </div>
+
+        <!-- Hours -->
+        <div class="contact-card">
+          <div class="contact-card__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/></svg>
+          </div>
+          <div>
+            <h3>Office Hours</h3>
+            <p>
+              Monday &ndash; Friday: 8:00am &ndash; 5:00pm CT<br>
+              Saturday &ndash; Sunday: Closed
+            </p>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="contact__message">
+          <h3>Ready to see how much you could save?</h3>
+          <p>Sign up to learn more about membership and receive a personalized savings estimate.</p>
+          <a href="signup.html" class="btn btn--accent">Sign Up to Learn More &rarr;</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="index.html" class="logo" style="color:#fff;">
+            <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 3C18 3 6 16 6 23a12 12 0 0 0 24 0C30 16 18 3 18 3z" fill="currentColor" opacity="0.15"/>
+              <path d="M18 3C18 3 6 16 6 23a12 12 0 0 0 24 0C30 16 18 3 18 3z" stroke="currentColor" stroke-width="2" fill="none"/>
+            </svg>
+            Rainwater Co-op
+          </a>
+          <p>A purchasing cooperative that helps independent rainwater collection and harvesting companies save on supplies through collective buying power.</p>
+        </div>
+        <div>
+          <h4>Pages</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="faq.html">FAQ</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get Started</h4>
+          <ul class="footer__links">
+            <li><a href="signup.html">Join the Co-op</a></li>
+            <li><a href="faq.html">How It Works</a></li>
+            <li><a href="contact.html">Get in Touch</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul class="footer__links">
+            <li>P.O. Box 4817</li>
+            <li>Austin, TX 78765</li>
+            <li><a href="tel:+15127349283">(512) 734-9283</a></li>
+            <li><a href="mailto:info@rainwatercoop.com">info@rainwatercoop.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        &copy; 2026 Rainwater Co-op. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
