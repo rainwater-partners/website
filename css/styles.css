@@ -947,3 +947,12 @@ h3 { font-size: 1.35rem; }
     grid-template-columns: 1fr;
   }
 }
+
+.logo__subtitle {
+  display: block;
+  font-size: 0.65rem;
+  font-weight: 500;
+  color: #5a6c7d;
+  letter-spacing: 0.01em;
+  margin-top: -2px;
+}
