@@ -956,3 +956,62 @@ h3 { font-size: 1.35rem; }
   letter-spacing: 0.01em;
   margin-top: -2px;
 }
+
+/* ===== Simplified Footer ===== */
+.footer__simple {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+}
+
+.footer__simple .footer__brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: 8px;
+}
+
+.footer__simple .footer__brand a[href^="mailto"] {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color var(--transition);
+}
+
+.footer__simple .footer__brand a[href^="mailto"]:hover {
+  color: var(--color-white);
+}
+
+.footer__tagline {
+  text-align: right;
+}
+
+.footer__tagline p {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.footer__note {
+  font-size: 0.85rem !important;
+  font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  margin-top: 6px;
+}
+
+/* ===== Products List ===== */
+.products__list {
+  color: var(--color-text-light);
+  font-size: 1.15rem;
+  margin-top: 20px;
+  letter-spacing: 0.01em;
+}
+
+@media (max-width: 768px) {
+  .footer__simple {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer__tagline {
+    text-align: left;
+  }
+}
