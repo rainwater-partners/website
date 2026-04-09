@@ -1,8 +1,8 @@
 // ===== Mobile Navigation =====
 (function () {
-  const toggle = document.getElementById('navToggle');
-  const links = document.getElementById('navLinks');
-  const overlay = document.getElementById('navOverlay');
+  var toggle = document.getElementById('navToggle');
+  var links = document.getElementById('navLinks');
+  var overlay = document.getElementById('navOverlay');
 
   if (!toggle || !links) return;
 
@@ -30,7 +30,6 @@
     overlay.addEventListener('click', closeNav);
   }
 
-  // Close on nav link click (mobile)
   links.querySelectorAll('a').forEach(function (link) {
     link.addEventListener('click', closeNav);
   });
@@ -48,14 +47,12 @@
     question.addEventListener('click', function () {
       var isOpen = item.classList.contains('open');
 
-      // Close all items
       items.forEach(function (other) {
         other.classList.remove('open');
         var btn = other.querySelector('.faq__question');
         if (btn) btn.setAttribute('aria-expanded', 'false');
       });
 
-      // Toggle clicked item
       if (!isOpen) {
         item.classList.add('open');
         question.setAttribute('aria-expanded', 'true');
@@ -65,47 +62,73 @@
 })();
 
 
-// ===== Sign-Up Form =====
+// ===== Sign-Up Form → Google Sheets + Zoho Confirmation Email =====
 (function () {
   var form = document.getElementById('signupForm');
   var success = document.getElementById('formSuccess');
 
   if (!form || !success) return;
 
+  // ---------------------------------------------------------------
+  // Replace this with your deployed Google Apps Script Web App URL.
+  // See setup/google-apps-script.js for the server-side code.
+  // ---------------------------------------------------------------
+  var SCRIPT_URL = 'REPLACE_WITH_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
 
-    // Basic validation
-    var companyName = form.querySelector('#companyName');
-    var contactName = form.querySelector('#contactName');
-    var email = form.querySelector('#email');
-    var phone = form.querySelector('#phone');
-    var annualSpend = form.querySelector('#annualSpend');
-
+    // Collect all form fields dynamically — extensible to any form shape
+    var formData = {};
     var valid = true;
 
-    [companyName, contactName, email, phone, annualSpend].forEach(function (field) {
+    form.querySelectorAll('input, select, textarea').forEach(function (field) {
+      if (!field.name) return;
       field.style.borderColor = '';
-      if (!field.value.trim()) {
+
+      if (field.required && !field.value.trim()) {
         field.style.borderColor = '#e74c3c';
         valid = false;
       }
+
+      formData[field.name] = field.value.trim();
     });
 
     // Email format check
-    if (email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+    var email = form.querySelector('#email');
+    if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
       email.style.borderColor = '#e74c3c';
       valid = false;
     }
 
     if (!valid) return;
 
-    // Show success message
-    form.style.display = 'none';
-    success.classList.add('show');
+    var submitBtn = form.querySelector('button[type="submit"]');
+    var originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting\u2026';
 
-    // Scroll to success message
-    success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    // POST to Google Apps Script (no-cors for GitHub Pages compatibility)
+    fetch(SCRIPT_URL, {
+      method: 'POST',
+      mode: 'no-cors',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(formData)
+    })
+    .then(function () {
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    .catch(function () {
+      form.style.display = 'none';
+      success.classList.add('show');
+      success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    })
+    .finally(function () {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+    });
   });
 
   // Clear error styling on input

@@ -948,13 +948,19 @@ h3 { font-size: 1.35rem; }
   }
 }
 
+.logo__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+
 .logo__subtitle {
   display: block;
   font-size: 0.65rem;
   font-weight: 500;
   color: #5a6c7d;
   letter-spacing: 0.01em;
-  margin-top: -2px;
+  margin-top: 2px;
 }
 
 /* ===== Simplified Footer ===== */
