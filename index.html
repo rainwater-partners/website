@@ -165,6 +165,7 @@
       <div class="form-section">
         <div class="form-section__intro">
           <h2>Start accessing better pricing</h2>
+          <p style="color:var(--color-text-light);margin-top:8px;">Takes 30 seconds. Helps us prioritize the right suppliers.</p>
         </div>
 
         <form class="form" id="signupForm" novalidate>
@@ -184,13 +185,40 @@
           </div>
 
           <div class="form__group">
-            <label class="form__label" for="phone">Phone Number <span>*</span></label>
-            <input class="form__input" type="tel" id="phone" name="phone" placeholder="e.g. (512) 555-0100" required>
+            <label class="form__label" for="phone">Phone Number (optional)</label>
+            <input class="form__input" type="tel" id="phone" name="phone" placeholder="e.g. (512) 555-0100">
+            <div class="form__hint">Only used to coordinate if helpful&mdash;no spam.</div>
           </div>
 
           <div class="form__group">
-            <label class="form__label" for="annualSpend">Approximate Annual Spend on Supplies <span>*</span></label>
-            <select class="form__select" id="annualSpend" name="annualSpend" required>
+            <label class="form__label">What do you purchase most?</label>
+            <div class="form__checkboxes">
+              <label class="form__checkbox">
+                <input type="checkbox" name="products" value="Storage tanks">
+                <span>Storage tanks</span>
+              </label>
+              <label class="form__checkbox">
+                <input type="checkbox" name="products" value="Pumps & pressure systems">
+                <span>Pumps &amp; pressure systems</span>
+              </label>
+              <label class="form__checkbox">
+                <input type="checkbox" name="products" value="Filtration & treatment">
+                <span>Filtration &amp; treatment</span>
+              </label>
+              <label class="form__checkbox">
+                <input type="checkbox" name="products" value="Monitoring & controls">
+                <span>Monitoring &amp; controls</span>
+              </label>
+              <label class="form__checkbox">
+                <input type="checkbox" name="products" value="Plumbing & fittings">
+                <span>Plumbing &amp; fittings</span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form__group">
+            <label class="form__label" for="annualSpend">Rough annual spend on systems and components (optional)</label>
+            <select class="form__select" id="annualSpend" name="annualSpend">
               <option value="" disabled selected>Select a range</option>
               <option value="under-25k">Under $25,000</option>
               <option value="25k-50k">$25,000 &ndash; $50,000</option>
@@ -202,9 +230,8 @@
           </div>
 
           <div class="form__group">
-            <label class="form__label" for="vendors">Suppliers You'd Like Better Pricing On</label>
-            <textarea class="form__textarea" id="vendors" name="vendors" placeholder="e.g. Bushman Tanks, Rain Harvesting Pty, Watts Water Technologies, Pentair..."></textarea>
-            <div class="form__hint">List any specific manufacturers, brands, or product categories.</div>
+            <label class="form__label" for="vendors">Suppliers or products you spend the most on (optional)</label>
+            <textarea class="form__textarea" id="vendors" name="vendors" placeholder="e.g. Bushman Tanks, Pioneer, Watts, Pentair, specific tank sizes, pump models, etc."></textarea>
           </div>
 
           <button type="submit" class="btn btn--accent">Join the Waitlist</button>

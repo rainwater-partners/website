@@ -84,6 +84,17 @@
 
     form.querySelectorAll('input, select, textarea').forEach(function (field) {
       if (!field.name) return;
+
+      // Checkboxes: collect checked values as comma-separated string
+      if (field.type === 'checkbox') {
+        if (field.checked) {
+          formData[field.name] = formData[field.name]
+            ? formData[field.name] + ', ' + field.value
+            : field.value;
+        }
+        return;
+      }
+
       field.style.borderColor = '';
 
       if (field.required && !field.value.trim()) {

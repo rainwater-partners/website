@@ -627,6 +627,30 @@ h3 { font-size: 1.35rem; }
   padding-right: 40px;
 }
 
+/* Checkboxes */
+.form__checkboxes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.form__checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
 .form .btn {
   width: 100%;
   padding: 16px;
