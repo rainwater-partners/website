@@ -119,11 +119,12 @@
     submitBtn.disabled = true;
     submitBtn.textContent = 'Submitting\u2026';
 
-    // POST to Google Apps Script (no-cors for GitHub Pages compatibility)
+    // POST to Google Apps Script
+    // Using text/plain to avoid CORS preflight on static sites
     fetch(SCRIPT_URL, {
       method: 'POST',
       mode: 'no-cors',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'text/plain' },
       body: JSON.stringify(formData)
     })
     .then(function () {
