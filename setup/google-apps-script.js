@@ -55,6 +55,7 @@ var ZEPTOMAIL_API_KEY = 'REPLACE_WITH_YOUR_ZEPTOMAIL_SEND_MAIL_TOKEN';
 
 var FROM_EMAIL = 'info@rainwater.partners';
 var FROM_NAME  = 'Rainwater Partners';
+var BOUNCE_ADDRESS = 'bounce@bounce-zem.rainwater.partners';
 
 // --------------- WEB APP ENTRY POINT ---------------
 
@@ -153,6 +154,7 @@ function sendConfirmationEmail(data) {
     '</p>';
 
   var payload = {
+    bounce_address: BOUNCE_ADDRESS,
     from: { address: FROM_EMAIL, name: FROM_NAME },
     to: [{ email_address: { address: data.email, name: data.contactName || '' } }],
     subject: subject,
