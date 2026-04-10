@@ -73,7 +73,7 @@
   // Replace this with your deployed Google Apps Script Web App URL.
   // See setup/google-apps-script.js for the server-side code.
   // ---------------------------------------------------------------
-  var SCRIPT_URL = 'REPLACE_WITH_YOUR_GOOGLE_APPS_SCRIPT_WEB_APP_URL';
+  var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxdkIKAFDy4COd9eYF0qtvcU1ODdbkH7MB4nRHfpJb-vrboRPCsF81GUy6spAE-Khsz1g/exec';
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
