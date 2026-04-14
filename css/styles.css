@@ -619,6 +619,37 @@ h3 { font-size: 1.35rem; }
   margin-top: 6px;
 }
 
+.form__nudge {
+  display: none;
+  font-size: 0.85rem;
+  color: #b7791f;
+  background: #fef5e7;
+  border: 1px solid #f4d9a0;
+  border-radius: var(--radius);
+  padding: 8px 12px;
+  margin-top: 8px;
+}
+
+.form__nudge.show {
+  display: block;
+}
+
+.form__error {
+  display: none;
+  font-size: 0.9rem;
+  color: #c0392b;
+  background: #fdecea;
+  border: 1px solid #f5c6c0;
+  border-radius: var(--radius);
+  padding: 10px 14px;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.form__error.show {
+  display: block;
+}
+
 .form__select {
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a6c7d' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");

@@ -75,12 +75,39 @@
   // ---------------------------------------------------------------
   var SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxqyw1w8iBMlS76OTDaIlLLFHI39Rls1Og2HSUvS04EpRoqTB4NEtXuzU2C-JXYDCCkxQ/exec';
 
+  var errorEl = document.getElementById('formError');
+  var phoneNudge = document.getElementById('phoneNudge');
+
+  function showError(msg) {
+    if (!errorEl) return;
+    errorEl.textContent = msg;
+    errorEl.classList.add('show');
+  }
+
+  function clearError() {
+    if (!errorEl) return;
+    errorEl.textContent = '';
+    errorEl.classList.remove('show');
+  }
+
+  function isValidEmail(value) {
+    // Requires something@domain.tld (TLD at least 2 chars)
+    return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value);
+  }
+
+  function isValidPhone(value) {
+    // Strip non-digits; accept 10+ digits (handles US + international)
+    var digits = value.replace(/\D/g, '');
+    return digits.length >= 10;
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    clearError();
 
     // Collect all form fields dynamically — extensible to any form shape
     var formData = {};
-    var valid = true;
+    var missingRequired = false;
 
     form.querySelectorAll('input, select, textarea').forEach(function (field) {
       if (!field.name) return;
@@ -99,20 +126,33 @@
 
       if (field.required && !field.value.trim()) {
         field.style.borderColor = '#e74c3c';
-        valid = false;
+        missingRequired = true;
       }
 
       formData[field.name] = field.value.trim();
     });
 
-    // Email format check
-    var email = form.querySelector('#email');
-    if (email && email.value && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      email.style.borderColor = '#e74c3c';
-      valid = false;
+    if (missingRequired) {
+      showError('Please fill in all required fields.');
+      return;
     }
 
-    if (!valid) return;
+    // Blocking: email format
+    var email = form.querySelector('#email');
+    if (email && !isValidEmail(email.value)) {
+      email.style.borderColor = '#e74c3c';
+      showError('Please enter a valid email address.');
+      return;
+    }
+
+    // Non-blocking: phone format (optional field)
+    var phone = form.querySelector('#phone');
+    if (phone && phone.value.trim() && !isValidPhone(phone.value)) {
+      if (phoneNudge) phoneNudge.classList.add('show');
+      // continue — do not block submission
+    } else if (phoneNudge) {
+      phoneNudge.classList.remove('show');
+    }
 
     var submitBtn = form.querySelector('button[type="submit"]');
     var originalText = submitBtn.textContent;
@@ -143,10 +183,14 @@
     });
   });
 
-  // Clear error styling on input
+  // Clear error styling + banner on input
   form.querySelectorAll('input, select, textarea').forEach(function (field) {
     field.addEventListener('input', function () {
       field.style.borderColor = '';
+      clearError();
+      if (field.id === 'phone' && phoneNudge) {
+        phoneNudge.classList.remove('show');
+      }
     });
     field.addEventListener('change', function () {
       field.style.borderColor = '';
