@@ -140,7 +140,7 @@ function sendConfirmationEmail(data) {
   var subject = 'Thanks \u2014 we\u2019ve got your info';
 
   var body =
-    firstName + ',\n\n' +
+    firstName + '\n\n' +
     'Thanks for signing up for Rainwater Partners.\n\n' +
     'As more companies join the waitlist, I\u2019ll be reaching out directly to ' +
     'make sure we\u2019re prioritizing the vendors and suppliers that matter most to you.\n\n' +
@@ -150,7 +150,7 @@ function sendConfirmationEmail(data) {
     'Founder, Rainwater Partners';
 
   var htmlBody =
-    '<p>' + firstName + ',</p>' +
+    '<p>' + firstName + '</p>' +
     '<p>Thanks for signing up for Rainwater Partners.</p>' +
     '<p>As more companies join the waitlist, I\u2019ll be reaching out directly to ' +
     'make sure we\u2019re prioritizing the vendors and suppliers that matter most to you.</p>' +
