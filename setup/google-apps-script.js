@@ -123,8 +123,16 @@ function appendToSheet(data) {
  * Uses the contactName field for the greeting (falls back to the email).
  */
 function sendConfirmationEmail(data) {
-  if (!data.email) return;
-  if (!ZEPTOMAIL_API_KEY || ZEPTOMAIL_API_KEY === 'REPLACE_WITH_YOUR_ZEPTOMAIL_SEND_MAIL_TOKEN') return;
+  Logger.log('sendConfirmationEmail called with: ' + JSON.stringify(data));
+
+  if (!data.email) {
+    Logger.log('Exiting: no email in data');
+    return;
+  }
+  if (!ZEPTOMAIL_API_KEY || ZEPTOMAIL_API_KEY === 'REPLACE_WITH_YOUR_ZEPTOMAIL_SEND_MAIL_TOKEN') {
+    Logger.log('Exiting: ZEPTOMAIL_API_KEY is not set');
+    return;
+  }
 
   // Extract first name from contactName (everything before the first space)
   var firstName = (data.contactName || '').split(' ')[0] || 'there';
