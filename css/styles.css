@@ -703,16 +703,18 @@ h3 { font-size: 1.35rem; }
   width: 56px;
   height: 56px;
   color: var(--color-accent);
-  margin: 0 auto 16px;
+  margin: 0 auto 20px;
+  display: block;
 }
 
 .form__success h3 {
-  margin-bottom: 8px;
+  margin: 0 0 8px;
   font-size: 1.4rem;
 }
 
 .form__success p {
   color: var(--color-text-light);
+  margin: 0;
 }
 
 /* ===== Contact ===== */
