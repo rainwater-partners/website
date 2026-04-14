@@ -196,4 +196,27 @@
       field.style.borderColor = '';
     });
   });
+
+  // Validate on blur (when user leaves the field)
+  var emailField = form.querySelector('#email');
+  if (emailField) {
+    emailField.addEventListener('blur', function () {
+      if (emailField.value.trim() && !isValidEmail(emailField.value)) {
+        emailField.style.borderColor = '#e74c3c';
+      } else {
+        emailField.style.borderColor = '';
+      }
+    });
+  }
+
+  var phoneField = form.querySelector('#phone');
+  if (phoneField && phoneNudge) {
+    phoneField.addEventListener('blur', function () {
+      if (phoneField.value.trim() && !isValidPhone(phoneField.value)) {
+        phoneNudge.classList.add('show');
+      } else {
+        phoneNudge.classList.remove('show');
+      }
+    });
+  }
 })();
