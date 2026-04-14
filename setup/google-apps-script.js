@@ -162,7 +162,7 @@ function sendConfirmationEmail(data) {
     htmlbody: htmlBody
   };
 
-  UrlFetchApp.fetch('https://api.zeptomail.com/v1.1/email', {
+  var response = UrlFetchApp.fetch('https://api.zeptomail.com/v1.1/email', {
     method: 'post',
     contentType: 'application/json',
     headers: {
@@ -170,5 +170,29 @@ function sendConfirmationEmail(data) {
     },
     payload: JSON.stringify(payload),
     muteHttpExceptions: true
+  });
+
+  var code = response.getResponseCode();
+  var body = response.getContentText();
+  Logger.log('ZeptoMail response: ' + code + ' - ' + body);
+  if (code >= 400) {
+    throw new Error('ZeptoMail API error ' + code + ': ' + body);
+  }
+}
+
+/**
+ * Manual test function. Run this from the Apps Script editor to verify
+ * the email setup works independently of the form.
+ *
+ * Usage:
+ *   1. Click the dropdown next to "Run" and select "testEmail"
+ *   2. Click Run
+ *   3. Check View → Executions to see the log output
+ *   4. Check your inbox
+ */
+function testEmail() {
+  sendConfirmationEmail({
+    email: 'REPLACE_WITH_YOUR_EMAIL_ADDRESS',
+    contactName: 'Test User'
   });
 }
